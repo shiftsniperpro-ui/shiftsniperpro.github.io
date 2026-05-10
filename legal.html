@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Agreement — Shift Sniper Pro</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+    :root {
+      --green:#03a87c; --bg:#0d1117; --surface:#161b22; --surface2:#21262d;
+      --border:#30363d; --text:#e6edf3; --muted:#8b949e; --red:#f85149; --gold:#e3b341;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.9;}
+    .nav{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 48px;
+      display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+    .nav-logo{font-size:18px;font-weight:800;color:var(--green);text-decoration:none;}
+    .nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:13px;}
+    .nav a:hover{color:var(--green);}
+    .progress-wrap{position:sticky;top:57px;z-index:99;height:3px;background:var(--surface2);}
+    .progress-bar{height:100%;background:var(--green);width:0%;transition:width .1s;}
+    .doc-hero{padding:70px 0 50px;text-align:center;border-bottom:1px solid var(--border);
+      background:radial-gradient(ellipse at top, rgba(3,168,124,0.06) 0%, transparent 60%);}
+    .doc-badge{display:inline-block;background:rgba(248,81,73,.15);border:1px solid rgba(248,81,73,.3);
+      color:var(--red);font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;
+      margin-bottom:20px;letter-spacing:.04em;text-transform:uppercase;}
+    .doc-hero h1{font-size:42px;font-weight:800;margin-bottom:12px;}
+    .doc-hero h1 span{color:var(--green);}
+    .doc-meta{color:var(--muted);font-size:14px;margin-top:8px;}
+    .read-time{display:inline-block;background:var(--surface);border:1px solid var(--border);
+      color:var(--muted);font-size:13px;padding:6px 16px;border-radius:20px;margin-top:16px;}
+    .toc{max-width:860px;margin:40px auto;background:var(--surface);border:1px solid var(--border);
+      border-radius:12px;padding:28px 36px;}
+    .toc h3{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;
+      letter-spacing:.06em;margin-bottom:16px;}
+    .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 40px;}
+    .toc a{color:var(--muted);text-decoration:none;font-size:14px;padding:5px 0;display:block;transition:color .2s;}
+    .toc a:hover{color:var(--green);}
+    .toc-num{color:var(--green);font-weight:700;margin-right:8px;font-size:13px;}
+    .doc-body{max-width:860px;margin:0 auto;padding:60px 40px 100px;}
+    .doc-section{margin-bottom:60px;padding-bottom:60px;border-bottom:1px solid var(--border);}
+    .doc-section:last-child{border-bottom:none;}
+    .section-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+    .section-num{font-size:12px;font-weight:800;color:var(--green);background:rgba(3,168,124,.12);
+      border:1px solid rgba(3,168,124,.25);padding:4px 12px;border-radius:6px;
+      white-space:nowrap;margin-top:8px;letter-spacing:.04em;}
+    .section-title{font-size:28px;font-weight:800;line-height:1.2;}
+    .doc-body p{color:#c9d1d9;margin-bottom:20px;font-size:15.5px;line-height:1.85;}
+    .doc-body p strong{color:var(--text);font-weight:700;}
+    .doc-body h3{font-size:18px;font-weight:700;color:var(--text);margin:32px 0 14px;}
+    .callout{border-radius:10px;padding:20px 24px;margin:24px 0;}
+    .callout p{margin:0;font-size:15px;line-height:1.75;}
+    .callout-red{background:rgba(248,81,73,.08);border-left:4px solid var(--red);}
+    .callout-red p{color:#ffa09a;}
+    .callout-green{background:rgba(3,168,124,.08);border-left:4px solid var(--green);}
+    .callout-green p{color:#7ee8c8;}
+    .callout-gold{background:rgba(227,179,65,.08);border-left:4px solid var(--gold);}
+    .callout-gold p{color:#f0d080;}
+    .callout-neutral{background:var(--surface);border-left:4px solid var(--border);}
+    .callout-neutral p{color:#c9d1d9;}
+    .pricing-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;}
+    .pricing-table th{background:var(--surface2);padding:14px 18px;text-align:left;
+      color:var(--muted);border:1px solid var(--border);font-size:12px;
+      text-transform:uppercase;letter-spacing:.05em;font-weight:700;}
+    .pricing-table td{padding:14px 18px;color:#c9d1d9;border:1px solid var(--border);vertical-align:top;}
+    .pricing-table td strong{color:var(--text);font-size:16px;}
+    .pricing-table tr:hover td{background:var(--surface);}
+    .sign-block{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+      padding:32px 36px;margin-top:48px;text-align:center;}
+    .sign-block h3{font-size:20px;font-weight:800;margin-bottom:12px;color:var(--green);}
+    .sign-block p{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:0;}
+    .sign-block strong{color:var(--text);}
+    .scroll-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;
+      background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;
+      cursor:pointer;box-shadow:0 4px 16px rgba(3,168,124,.4);opacity:0;transition:opacity .3s;
+      text-decoration:none;font-size:20px;color:#fff;}
+    .scroll-top.show{opacity:1;}
+    footer{background:var(--surface);border-top:1px solid var(--border);
+      padding:32px 48px;text-align:center;color:var(--muted);font-size:13px;}
+    footer a{color:var(--muted);text-decoration:none;margin:0 14px;}
+    footer a:hover{color:var(--green);}
+    @media(max-width:600px){
+      .nav{padding:14px 20px;}.doc-hero h1{font-size:28px;}
+      .doc-body{padding:40px 20px 80px;}.toc{padding:20px;margin:20px;}
+      .toc-grid{grid-template-columns:1fr;}.section-title{font-size:22px;}
+      .pricing-table{font-size:12px;}.pricing-table th,.pricing-table td{padding:10px 12px;}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">⚡ Shift Sniper Pro</a>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#terms">Terms</a>
+    <a href="mailto:support.shiftsniperpro@gmail.com">Contact</a>
+  </div>
+</nav>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="doc-hero">
+  <div class="doc-badge">⚠️ Please Read Before Using</div>
+  <h1>Legal Agreement &amp;<br><span>Service Terms</span></h1>
+  <div class="doc-meta">Shift Sniper Pro — Ontario, Canada — Effective May 9, 2026</div>
+  <div class="read-time">📖 Estimated reading time: 5–8 minutes</div>
+</div>
+
+<div class="toc">
+  <h3>Table of Contents</h3>
+  <div class="toc-grid">
+    <a href="#about"><span class="toc-num">01</span>About Shift Sniper Pro</a>
+    <a href="#privacy"><span class="toc-num">07</span>Privacy &amp; Data We Collect</a>
+    <a href="#pricing"><span class="toc-num">02</span>Pricing &amp; Admission Fee</a>
+    <a href="#data-use"><span class="toc-num">08</span>How We Use Your Data</a>
+    <a href="#contract"><span class="toc-num">03</span>6-Month Minimum Contract</a>
+    <a href="#data-sharing"><span class="toc-num">09</span>Data Sharing &amp; Security</a>
+    <a href="#refunds"><span class="toc-num">04</span>No Refund Policy</a>
+    <a href="#your-rights"><span class="toc-num">10</span>Your Privacy Rights</a>
+    <a href="#scanlimits"><span class="toc-num">05</span>Scan Limits Per Plan</a>
+    <a href="#noguarantee"><span class="toc-num">11</span>No Employment Guarantee</a>
+    <a href="#license"><span class="toc-num">06</span>License Key Rules</a>
+    <a href="#contact"><span class="toc-num">12</span>Contact &amp; Support</a>
+  </div>
+</div>
+
+<div class="doc-body">
+
+  <div class="doc-section">
+    <div class="callout callout-neutral">
+      <p>This document is a legally binding agreement between you and Shift Sniper Pro. By installing, activating, purchasing, or using Shift Sniper Pro in any way, you confirm that you have read this entire document, that you understand it fully, and that you agree to be legally bound by every provision contained here. If you do not agree with any part of this agreement, you must not install or use Shift Sniper Pro.</p>
+    </div>
+  </div>
+
+  <div class="doc-section" id="about">
+    <div class="section-header">
+      <span class="section-num">SECTION 01</span>
+      <h2 class="section-title">About Shift Sniper Pro</h2>
+    </div>
+    <p>Shift Sniper Pro is a Google Chrome browser extension designed to automate the process of monitoring Amazon's warehouse hiring pages across Canada and booking available shifts on your behalf the moment they appear. The extension runs continuously in the background of your browser, scanning Amazon's hiring platform at regular intervals depending on your subscription plan, and when a shift becomes available it immediately begins the application process using your saved personal information.</p>
+    <p>It is critically important to understand that Shift Sniper Pro is a completely independent product. We are not affiliated with, endorsed by, sponsored by, or connected in any way to Amazon.com Inc., Amazon Canada Fulfillment Services, or any of their subsidiaries or partners. The use of the word "Amazon" in our description refers solely to Amazon's publicly accessible hiring platform and does not imply any official relationship or partnership whatsoever.</p>
+    <p>Shift Sniper Pro is intended exclusively for individuals who are 18 years of age or older and who are legally eligible to work in Canada. By using this service you represent and confirm that you meet both of these requirements.</p>
+  </div>
+
+  <div class="doc-section" id="pricing">
+    <div class="section-header">
+      <span class="section-num">SECTION 02</span>
+      <h2 class="section-title">Pricing &amp; Admission Fee</h2>
+    </div>
+    <p>Shift Sniper Pro offers three subscription plans. Every new subscriber on any plan is required to pay a one-time admission fee of one hundred Canadian dollars ($100.00 CAD) on their very first month. This admission fee is charged only once — on your first payment — and does not apply to any subsequent monthly charges. From your second month onwards, you are charged only the standard monthly rate for your chosen plan. The admission fee is non-refundable under any circumstances.</p>
+
+    <div class="callout callout-gold">
+      <p>💰 The $100 admission fee is a one-time charge on your first month only. From month 2 onwards you pay only your plan's standard monthly rate. All prices are in Canadian dollars (CAD).</p>
+    </div>
+
+    <table class="pricing-table">
+      <tr>
+        <th>Plan</th>
+        <th>First Month</th>
+        <th>Month 2 Onwards</th>
+        <th>Daily Scans</th>
+        <th>Min. Term</th>
+      </tr>
+      <tr>
+        <td><strong>Basic</strong></td>
+        <td><strong>$249.99 CAD</strong><br><small style="color:var(--muted)">$149.99 + $100 admission</small></td>
+        <td><strong>$149.99 CAD</strong>/month</td>
+        <td>10,000/day</td>
+        <td>6 months</td>
+      </tr>
+      <tr>
+        <td><strong>Pro</strong></td>
+        <td><strong>$299.99 CAD</strong><br><small style="color:var(--muted)">$199.99 + $100 admission</small></td>
+        <td><strong>$199.99 CAD</strong>/month</td>
+        <td>25,000/day</td>
+        <td>6 months</td>
+      </tr>
+      <tr>
+        <td><strong>VIP</strong></td>
+        <td><strong>$349.99 CAD</strong><br><small style="color:var(--muted)">$249.99 + $100 admission</small></td>
+        <td><strong>$249.99 CAD</strong>/month</td>
+        <td>Unlimited</td>
+        <td>6 months</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="doc-section" id="contract">
+    <div class="section-header">
+      <span class="section-num">SECTION 03</span>
+      <h2 class="section-title">6-Month Minimum Contract</h2>
+    </div>
+    <div class="callout callout-red">
+      <p>⚠️ This is the most important section. Please read it carefully before purchasing. Every subscription carries a mandatory minimum commitment of 6 consecutive months. You cannot cancel before this period ends under any circumstances.</p>
+    </div>
+    <p>By completing your first payment and activating your license key, you are entering into a binding six-month contract and you accept full financial responsibility for all payments due during that entire period. Cancellation requests submitted before the minimum term expires will be rejected without exception. If you stop making payments before your six-month term is complete, the remaining balance for the rest of your minimum term becomes immediately due and payable in full.</p>
+    <p>To give you a clear picture of your total financial commitment, here is what each plan costs over the full six-month minimum term. For the Basic plan your first payment is $249.99 followed by five monthly payments of $149.99 each, bringing your total minimum commitment to $999.94 Canadian dollars. For the Pro plan your first payment is $299.99 followed by five monthly payments of $199.99 each, bringing your total minimum commitment to $1,299.94 Canadian dollars. For the VIP plan your first payment is $349.99 followed by five monthly payments of $249.99 each, bringing your total minimum commitment to $1,599.94 Canadian dollars.</p>
+    <p>After your six-month minimum term is successfully completed, your subscription automatically converts to a month-to-month arrangement. At that point you may cancel at any time by providing thirty days written notice to our support email. Your access continues until the end of the billing period for which you have already paid.</p>
+  </div>
+
+  <div class="doc-section" id="refunds">
+    <div class="section-header">
+      <span class="section-num">SECTION 04</span>
+      <h2 class="section-title">No Refund Policy</h2>
+    </div>
+    <div class="callout callout-red">
+      <p>⚠️ All payments made to Shift Sniper Pro are completely final and non-refundable. We do not offer refunds under any circumstances whatsoever.</p>
+    </div>
+    <p>We do not issue refunds for the one-time admission fee under any circumstances. We do not issue refunds for any monthly payment that has already been processed. We do not issue refunds if you decide you no longer want or need the service. We do not issue refunds if Amazon changes their hiring website in a way that temporarily affects the extension's functionality. We do not issue refunds if you fail to find a job or fail to get hired by Amazon after using the extension. We do not issue refunds if you experience technical problems on your own device or internet connection. We do not issue refunds if your account is suspended or terminated due to a violation of these terms. We do not issue refunds for any remaining months in your minimum contract period under any circumstances.</p>
+    <p>The reason for this policy is clear — access to the software is granted immediately upon payment and cannot be returned the way a physical product can. By completing your purchase you acknowledge and accept this no-refund policy completely and without reservation.</p>
+  </div>
+
+  <div class="doc-section" id="scanlimits">
+    <div class="section-header">
+      <span class="section-num">SECTION 05</span>
+      <h2 class="section-title">Scan Limits Per Plan</h2>
+    </div>
+    <p>Each subscription plan comes with a defined maximum number of scans the extension is permitted to perform per calendar day. The Basic plan allows a maximum of ten thousand scans per day. The Pro plan allows a maximum of twenty-five thousand scans per day. The VIP plan has no daily scan limit and runs without any restriction. All scan limits reset at midnight Eastern Standard Time every calendar day. If you reach your daily scan limit the extension automatically pauses until the reset occurs at midnight. Reaching your daily scan limit does not entitle you to a refund, a free plan upgrade, or any form of compensation.</p>
+  </div>
+
+  <div class="doc-section" id="license">
+    <div class="section-header">
+      <span class="section-num">SECTION 06</span>
+      <h2 class="section-title">License Key Rules</h2>
+    </div>
+    <div class="callout callout-green">
+      <p>✅ Your license key is strictly personal — one person, one device at a time, one Amazon account only.</p>
+    </div>
+    <p>When you purchase a subscription you receive a unique personal license key. This key grants you a non-exclusive, non-transferable, revocable right to use Shift Sniper Pro on your own device for your own personal job search only. You may not share your license key with any other person for any reason. You may not sell, transfer, lend, or give your license key to anyone else. You may not use your license key on more than one device simultaneously. You may not create multiple accounts to avoid paying for additional licenses. You may not use more than one Amazon account in connection with a single license key.</p>
+    <p>We actively monitor license usage using IP address tracking, device fingerprinting, and Amazon account detection. If our systems detect that a license key is being shared or used in connection with multiple Amazon accounts, we will immediately and permanently terminate the associated license without warning, without refund, and without the possibility of appeal. Account termination due to license sharing does not release you from your financial obligation to complete your minimum six-month contract. You will still be required to pay all remaining monthly fees even after your access has been revoked.</p>
+  </div>
+
+  <div class="doc-section" id="privacy">
+    <div class="section-header">
+      <span class="section-num">SECTION 07</span>
+      <h2 class="section-title">Privacy &amp; Data We Collect</h2>
+    </div>
+    <p>Shift Sniper Pro collects personal information from you in two ways — information you provide directly and information collected automatically. We are committed to handling your information responsibly and in compliance with Canada's Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
+    <p>The personal information you provide directly includes your first and last name, your email address which must match your Amazon account, your phone number, your date of birth, your complete home address including street, city, province, and postal code, your work availability preferences including preferred shifts and days of the week, and optionally your employment history and education history to improve the accuracy of auto-filled application forms.</p>
+    <p>We also collect certain information automatically when you use the extension. This includes your IP address which we use to detect unauthorized license sharing, your device type and operating system, your browser version, the number of scans you perform each day, the number of jobs detected and booked on your behalf, the timestamps of your usage, and your Amazon account email specifically to detect if a single license key is being used with multiple Amazon accounts.</p>
+    <p>When the extension detects an available job posting, it sends a brief anonymized report to our database recording the city, province, time of day, job type, and shift type of that posting. This report contains none of your personal details and is used solely to build a picture of when and where Amazon posts warehouse jobs across Canada.</p>
+  </div>
+
+  <div class="doc-section" id="data-use">
+    <div class="section-header">
+      <span class="section-num">SECTION 08</span>
+      <h2 class="section-title">How We Use Your Data</h2>
+    </div>
+    <p>Your personal profile information — your name, address, phone number, date of birth, and employment details — is stored locally on your own device using Chrome's secure built-in storage. This information never leaves your device except when you authorize the extension to submit a job application on Amazon's platform on your behalf, at which point it is entered directly into Amazon's forms exactly as you would type it yourself.</p>
+    <p>Your license key and usage data including scan counts, job detection records, last active time, IP address, and device type are stored in a secure database accessible only to the developer. This data is used to verify your subscription, enforce your daily scan limits, detect unauthorized license sharing, track job market patterns across Canada, and provide customer support. We do not sell your personal information to any third party under any circumstances and we do not share it with advertisers or data brokers.</p>
+  </div>
+
+  <div class="doc-section" id="data-sharing">
+    <div class="section-header">
+      <span class="section-num">SECTION 09</span>
+      <h2 class="section-title">Data Sharing &amp; Security</h2>
+    </div>
+    <p>The only third parties with whom your information may be shared are Amazon.ca when your application is submitted on your behalf, Google in connection with the Google Sheets infrastructure that powers our license management system, and Gumroad or another payment processor in connection with processing your subscription payments. We may also disclose information where required by Canadian law. All communication between the extension and our license server takes place over encrypted HTTPS connections. Your personal profile data never travels to our servers and remains entirely on your own device. We retain your license and usage data for two years following the end of your subscription. Anonymized job market data is retained indefinitely.</p>
+  </div>
+
+  <div class="doc-section" id="your-rights">
+    <div class="section-header">
+      <span class="section-num">SECTION 10</span>
+      <h2 class="section-title">Your Privacy Rights</h2>
+    </div>
+    <p>As a resident of Canada you have specific rights under PIPEDA. You have the right to request access to the personal information we hold about you, to request correction of any inaccurate information, and to request deletion of your personal data subject to any legal obligations that may require us to retain certain records. You have the right to withdraw your consent to data collection at any time, though doing so may prevent you from using the service and does not release you from any outstanding financial obligations under your minimum contract. You also have the right to file a complaint with the Office of the Privacy Commissioner of Canada. To exercise any of these rights please contact us at the address in Section 12.</p>
+  </div>
+
+  <div class="doc-section" id="noguarantee">
+    <div class="section-header">
+      <span class="section-num">SECTION 11</span>
+      <h2 class="section-title">No Employment Guarantee</h2>
+    </div>
+    <div class="callout callout-red">
+      <p>⚠️ Shift Sniper Pro does not guarantee employment, job availability, or application success. We automate the search and application process only.</p>
+    </div>
+    <p>The extension automates finding and applying for Amazon warehouse positions on your behalf quickly and efficiently. However it cannot guarantee that you will be hired, that Amazon will review or accept your application, that positions will be available in your area at any given time, or that the extension will function perfectly at all times given that Amazon may change their website without notice. When Amazon makes changes that affect the extension's functionality we will work to restore full operation as quickly as possible, but any period of reduced functionality does not entitle you to a refund or early contract termination. This agreement is governed by the laws of Ontario, Canada and our total liability to you is limited to the amount paid in your most recent single calendar month.</p>
+  </div>
+
+  <div class="doc-section" id="contact">
+    <div class="section-header">
+      <span class="section-num">SECTION 12</span>
+      <h2 class="section-title">Contact &amp; Support</h2>
+    </div>
+    <p>If you have questions about this agreement, need support, wish to exercise your privacy rights, or need to discuss your subscription, you may contact us at any time at <strong>support.shiftsniperpro@gmail.com</strong>. We are based in Ontario, Canada and respond to all inquiries within 48 business hours, Monday through Friday, 9:00 AM to 6:00 PM Eastern Standard Time.</p>
+  </div>
+
+  <div class="sign-block">
+    <h3>✅ Your Agreement</h3>
+    <p>By purchasing a subscription and activating your license key, you confirm that you are <strong>18 years of age or older</strong>, legally eligible to work in Canada, that you have read this entire agreement, that you understand the <strong>6-month minimum contract</strong> and total financial commitment, that you understand and accept the <strong>no-refund policy</strong>, that your license key is for <strong>your personal use only</strong>, and that you agree to be legally bound by everything in this document.</p>
+  </div>
+
+</div>
+
+<a href="#" class="scroll-top" id="scrollTop">↑</a>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="legal.html">Legal Agreement</a>
+  <a href="mailto:support.shiftsniperpro@gmail.com">Contact</a>
+  <br><br>
+  © 2026 Shift Sniper Pro. Ontario, Canada. Not affiliated with Amazon.com Inc.
+</footer>
+
+<script>
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const total = document.body.scrollHeight - window.innerHeight;
+    const pct = (window.scrollY / total) * 100;
+    document.getElementById('progressBar').style.width = pct + '%';
+    const st = document.getElementById('scrollTop');
+    if (window.scrollY > 400) st.classList.add('show');
+    else st.classList.remove('show');
+  });
+</script>
+
+</body>
+</html>
